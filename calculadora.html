@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        input, button{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
+    <br>
+    <button onclick="Calcular('Sumar')">Sumar</button>
+    <button onclick="Calcular('Restar')">Restar</button>
+    <button onclick="Calcular('Multiplicar')">Multiplicar</button>
+    <button onclick="Calcular('Divivdir')">Divivdir</button>
+    <br>
+    <h2 id="resultado">Resultado:</h2>
+
+    <script>
+        function calculate(operation){
+            const num1 = parseFloat(document.getElementById('num1'.value));
+            const num2 = parseFloat(document.getElementById('num2'.value));
+            let result;
+        }
+        switch (operation){
+            case 'Sumar':
+                result = num1 + num2;
+                break;
+            case 'Restar':
+                result = num1 - num2;
+                break;
+            case 'Multiplicar':
+                result = num1 * num2;
+                break;
+            case 'Dividir':
+                result = num2 === 0 ?'Error!, En la División no puede hacerse entre 0.' : num1 /num2;
+                break;
+        }
+        document.getElementById('Resultado').innerText = `Resultado: ${Resultado}`;
+    </script>
+</body>
+</html>
