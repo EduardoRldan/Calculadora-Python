@@ -1,88 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
-        .calculator {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        input, button {
-            font-size: 1.2em;
-            margin: 5px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            margin-top: 20px;
-            font-size: 1.5em;
-        }
-    </style>
+    <link rel="stylesheet" href="/CSS/calculadora.css">
 </head>
 <body>
     <div class="calculator">
-        <h1>Calculadora</h1>
-        <input type="number" id="num1" placeholder="Número 1">
-        <input type="number" id="num2" placeholder="Número 2">
-        <br>
-        <button onclick="calculate('add')">Sumar</button>
-        <button onclick="calculate('subtract')">Restar</button>
-        <button onclick="calculate('multiply')">Multiplicar</button>
-        <button onclick="calculate('divide')">Dividir</button>
-        <div class="result" id="result">Resultado: </div>
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button class="button" onclick="clearDisplay()">C</button>
+            <button class="button" onclick="appendOperator('/')">/</button>
+            <button class="button" onclick="appendOperator('*')">*</button>
+            <button class="button" onclick="appendOperator('-')">-</button>
+            <button class="button" onclick="appendNumber(7)">7</button>
+            <button class="button" onclick="appendNumber(8)">8</button>
+            <button class="button" onclick="appendNumber(9)">9</button>
+            <button class="button" onclick="appendOperator('+')">+</button>
+            <button class="button" onclick="appendNumber(4)">4</button>
+            <button class="button" onclick="appendNumber(5)">5</button>
+            <button class="button" onclick="appendNumber(6)">6</button>
+            <button class="button equal" rowspan="2" onclick="calculate()">=</button>
+            <button class="button" onclick="appendNumber(1)">1</button>
+            <button class="button" onclick="appendNumber(2)">2</button>
+            <button class="button" onclick="appendNumber(3)">3</button>
+            <button class="button zero" colspan="2" onclick="appendNumber(0)">0</button>
+            <button class="button" onclick="appendDot()">.</button>
+        </div>
     </div>
-
-    <script>
-        function calculate(operation) {
-            const num1 = parseFloat(document.getElementById('num1').value);
-            const num2 = parseFloat(document.getElementById('num2').value);
-            let result;
-
-            if (isNaN(num1) || isNaN(num2)) {
-                result = "Por favor, ingresa números válidos.";
-            } else {
-                switch (operation) {
-                    case 'add':
-                        result = num1 + num2;
-                        break;
-                    case 'subtract':
-                        result = num1 - num2;
-                        break;
-                    case 'multiply':
-                        result = num1 * num2;
-                        break;
-                    case 'divide':
-                        result = num2 === 0 ? 'Error! División por cero.' : num1 / num2;
-                        break;
-                    default:
-                        result = 'Operación no válida';
-                        break;
-                }
-            }
-            document.getElementById('result').innerText = `Resultado: ${result}`;
-        }
-    </script>
+    <script src="/JS/calculadora.js"></script>
 </body>
 </html>
