@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Productos - MEGAS</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+                - ${{ product.price }}
+                <a href="{% url 'add_to_cart' product.id %}">Añadir al carrito</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

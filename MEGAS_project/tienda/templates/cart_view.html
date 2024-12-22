@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrito de Compras - MEGAS</title>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.product.name }} - Cantidad: {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
