@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, ShoppingCart, ShoppingCartItem
 
 def inicio(request):
-    return render(request, 'tienda/inicio.html')
+    return render(request, 'inicio.html')
 
 def product_list(request):
     products = Product.objects.all()
