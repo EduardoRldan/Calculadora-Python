@@ -1,0 +1,23 @@
+/* Asegurémonos de que los estilos son visibles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #282c34;
+}
+
+.clock-container {
+    text-align: center;
+    font-size: 48px;
+    color: white;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.clock {
+    font-size: 3rem;
+}
